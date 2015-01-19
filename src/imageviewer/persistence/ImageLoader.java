@@ -1,5 +1,6 @@
-package imageviewer;
+package imageviewer.persistence;
 
+import imageviewer.model.Image;
 import java.io.File;
 import java.io.FilenameFilter;
 
@@ -9,7 +10,7 @@ public class ImageLoader {
     public Image load(String filename) {
         File file = new File(filename);
         String[] filenames = file.getParentFile().list(getImageFilter());
-        link(map(filenames));
+        map = link(map(filenames));
         return map[0];
     }
 
